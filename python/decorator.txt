@@ -1,0 +1,20 @@
+def add_greeting(greeting=''):
+    def add_greeting_decorator(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            print(greeting)
+            return f(greeting, *args, **kwargs)
+        return wrapper
+    return add_greeting_decorator
+
+@add_greeting("Yo!")
+def print_name(greeting, name):
+    print(greeting)
+    print(name)
+
+
+print_name("Abe")
+
+Yo!
+Yo!
+Abe

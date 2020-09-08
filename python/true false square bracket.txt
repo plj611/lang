@@ -1,0 +1,9 @@
+>>> [] == True
+False
+>>> [] == False
+False
+>>> a = []
+>>> not a
+True
+>>> print('1') if a else print('2')
+2
